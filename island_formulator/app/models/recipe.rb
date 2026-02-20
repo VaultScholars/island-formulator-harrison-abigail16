@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
   
   # A recipe has many ingredients, but it finds them by looking at the join table
   has_many :ingredients, through: :recipe_ingredients
+  has_one_attached :photo
   
   # This is the magic line for our nested form!
   # It allows us to save ingredients at the same time we save the recipe.

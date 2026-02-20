@@ -53,6 +53,7 @@ class RecipesController < ApplicationController
       :title, 
       :product_type, 
       :method, 
+      :photo,
       recipe_ingredients_attributes: [:id, :ingredient_id, :quantity, :_destroy]
     )
   end
