@@ -34,7 +34,10 @@
       <% end %>
       
       <% if authenticated? %>
+        <%= link_to "Dashboard", root_path, class: "text-gray-600 hover:text-gray-900 transition-colors" %>
         <%= link_to "My Recipes", recipes_path, class: "text-gray-600 hover:text-gray-900 transition-colors" %>
+        <%= link_to "Inventory", inventory_items_path, class: "text-gray-600 hover:text-gray-900 transition-colors" %>
+        <%= link_to "Batches", batches_path, class: "text-gray-600 hover:text-gray-900 transition-colors" %>
         <%= link_to "My Ingredients", ingredients_path, class: "text-gray-600 hover:text-gray-900 transition-colors" %>
       <% end %>
     </div>
