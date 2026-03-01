@@ -17,22 +17,22 @@
       <%= form.label :recipe_id, "Which Recipe?" %>
       <%= form.collection_select :recipe_id, current_user.recipes, :id, :title, 
           { prompt: "Select a recipe" }, 
-          { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" } %>
+          { class: "block shadow rounded-lg border border-pink-200 outline-none px-3 py-2 mt-2 w-full" } %>
     </div>
 
     <div class="my-5">
       <%= form.label :made_on, "Date Made" %>
-      <%= form.date_field :made_on, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      <%= form.date_field :made_on, class: "block shadow rounded-xl border border-pink-200 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
 
     <div class="my-5">
       <%= form.label :notes, "Production Notes (How did it go? Any adjustments?)" %>
-      <%= form.text_area :notes, rows: 6, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder: "e.g. Added a bit more lavender oil for scent. Consistency is perfect." %>
+      <%= form.text_area :notes, rows: 6, class: "block shadow rounded-xl border border-pink-200 outline-none px-3 py-2 mt-2 w-full", placeholder: "e.g. Added a bit more lavender oil for scent. Consistency is perfect." %>
     </div>
 
     <div class="inline">
-      <%= form.submit "Log Batch", class: "rounded-lg py-3 px-5 bg-green-600 text-white inline-block font-medium cursor-pointer" %>
-      <%= link_to "Cancel", batches_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= form.submit "Log Batch", class: "rounded-xl py-3 px-5 bg-pink-600 text-white inline-block font-medium cursor-pointer" %>
+      <%= link_to "Cancel", batches_path, class: "ml-2 rounded-xl py-3 px-5 bg-pink-100 inline-block font-medium" %>
     </div>
   <% end %>
 </div>
