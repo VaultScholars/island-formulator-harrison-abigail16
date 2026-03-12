@@ -199,7 +199,7 @@ https://github.com/user-attachments/assets/6db860e2-7a70-4802-9110-345f8b9f604c
 
 1. **Name your app**: Use your first name + app name (e.g., `jane-island-formulator`)
    - ⚠️ **Include your first name for uniqueness** - this determines your URL!
-2. **Region**: Select **NYC3** (New York) - this is important!
+2. **Region**: Select **NYC1** (New York) - this is important!
 3. **Branch**: Select `main` (or your default branch)
 4. **Source Directory**: Leave as `/` (root)
 
