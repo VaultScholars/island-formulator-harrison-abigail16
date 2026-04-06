@@ -24,6 +24,8 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = current_user.ingredients.build(ingredient_params)
 
+    @ingredient.tag_ids = params[:ingredient][:tag_ids] if params[:ingredient][:tag_ids]
+
     respond_to do |format|
       if @ingredient.save
         format.html { redirect_to @ingredient, notice: "Ingredient was successfully created." }
@@ -66,6 +68,6 @@ class IngredientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ingredient_params
-      params.require(:ingredient).permit(:name, :category, :description, :photo)
+      params.require(:ingredient).permit(:name, :category, :description, :photo, tag_id: [])
     end
 end

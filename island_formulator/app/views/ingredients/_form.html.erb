@@ -55,6 +55,8 @@
   <%= form.label :tag_ids, "Benefits & Properties", class: "block font-bold mb-2 text-pink-600" %>
   <div class="grid grid-cols-2 gap-2">
 
+      <%= hidden_field_tag "ingredient[tag_ids][]", nil %>
+      
     <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |cb| %>
       <div class="flex items-center">
         <%= cb.check_box class: "w-4 h-4 text-pink-500 border-gray-300 rounded focus:ring-pink-500" %>
