@@ -9,6 +9,9 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
   has_one_attached :photo
 
+  has_many :favourites
+  has_many :favourited_by_users, through: :favourites, source: :user
+
   # This is the magic line for our nested form!
   # It allows us to save ingredients at the same time we save the recipe.
   # allow_destroy: true lets us delete ingredients from a recipe.

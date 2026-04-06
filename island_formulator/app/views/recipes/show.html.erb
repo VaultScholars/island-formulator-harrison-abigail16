@@ -18,8 +18,21 @@
 
 <div class="max-w-4xl mx-auto p-6">
   <div class="flex justify-between items-start mb-6">
-    <div>
+    <div class="flex items-center space-x-3">
       <h1 class="text-4xl font-bold text-gray-900"><%= @recipe.title %></h1>
+
+      <% if current_user.favourite_recipes.include?(@recipe) %>
+        <%= button_to recipe_favourite_path(@recipe), method: :delete, class: "text-yellow-400 hover:text-yellow-500 text-2xl p-0", form_class: "inline" do %>
+          ⭐
+        <% end %>
+      <% else %>
+        <%= button_to recipe_favourite_path(@recipe), method: :post, class: "text-gray-400 hover:text-yellow-500 text-2xl p-0", form_class: "inline" do %>
+          ☆
+        <% end %>
+      <% end %>
+
+  </div>
+    <div>
       <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mt-2 font-semibold uppercase tracking-wide">
         <%= @recipe.product_type %>
       </span>
