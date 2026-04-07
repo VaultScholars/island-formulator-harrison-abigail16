@@ -1,9 +1,9 @@
 <%= form_with(model: batch, class: "contents") do |form| %>
   <% if batch.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(batch.errors.count, "error") %> prohibited this batch from being saved:</h2>
+    <div id="error_explanation" class="bg-green-950/10 text-green-900 px-4 py-3 font-medium rounded-xl mt-4 border border-green-900/20 shadow-sm">
+      <h2>🌿 <%= pluralize(batch.errors.count, "error") %> prohibited this batch from being saved:</h2>
 
-      <ul class="list-disc ml-6">
+      <ul class="list-disc ml-6 mt-2">
         <% batch.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -12,6 +12,6 @@
   <% end %>
 
   <div class="inline">
-    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "w-full sm:w-auto rounded-xl px-5 py-2.5 bg-green-900 hover:bg-green-800 text-white inline-block font-semibold cursor-pointer shadow-md transition" %>
   </div>
 <% end %>

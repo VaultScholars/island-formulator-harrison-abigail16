@@ -1,9 +1,9 @@
 <%= form_with(model: ingredient, class: "contents") do |form| %>
   <% if ingredient.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
+    <div id="error_explanation" class="bg-green-950/10 text-green-900 px-4 py-3 font-medium rounded-xl mt-4 border border-green-900/20 shadow-sm">
+      <h2>🌿 <%= pluralize(ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
 
-      <ul class="list-disc ml-6">
+      <ul class="list-disc ml-6 mt-2">
         <% ingredient.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,55 +11,54 @@
     </div>
   <% end %>
 
-  <div class="bg-white shadow p-6 rounded-lg">
-  <%= form.label :photo, "Ingredient Photo", class: "block font-bold text-pink-700 mb-2" %>
+  <div class="bg-white shadow-md p-6 rounded-2xl border border-green-900/10">
+  <%= form.label :photo, "Ingredient Photo", class: "block font-bold text-green-900 mb-2" %>
   <div class="flex items-center justify-center w-full">
-    <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-pink-300 border-dashed rounded-lg cursor-pointer bg-pink-100 hover:bg-pink-200">
+    <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-green-900/20 border-dashed rounded-xl cursor-pointer bg-green-950/5 hover:bg-green-950/10">
       <div class="flex flex-col items-center justify-center pt-5 pb-6">
-        <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+        <svg class="w-8 h-8 mb-4 text-green-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
         </svg>
-        <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+        <p class="mb-2 text-sm text-gray-600"><span class="font-semibold">Click to upload</span> or drag and drop</p>
         <p class="text-xs text-gray-500">PNG, JPG or GIF</p>
       </div>
       <%= form.file_field :photo, accept: "image/*", class: "hidden" %>
     </label>
   </div>
   <% if ingredient.photo.attached? %>
-    <p class="mt-2 text-sm text-green-600">✓ Current photo: <%= ingredient.photo.filename %></p>
+    <p class="mt-2 text-sm text-green-700"> ✓ Current photo: <%= ingredient.photo.filename %></p>
   <% end %>
 </div>
 
-
   <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: {"block w-full rounded-xl border-pink-300 shadow-lg focus:border-pink-500 focus:ring-emerald-500"=> ingredient.errors[:name].none?, "border-red-400 focus:outline-red-600"=> ingredient.errors[:name].any?} %>
+    <%= form.label :name, class: "text-green-900 font-medium" %>
+    <%= form.text_field :name, class: {"block w-full rounded-xl border-green-900/20 shadow-sm focus:border-green-900 focus:ring-green-900/30"=> ingredient.errors[:name].none?, "border-red-400 focus:outline-red-600"=> ingredient.errors[:name].any?} %>
   </div>
 
   <div class="my-5">
-    <%= form.label :category %>
-    <%= form.text_field :category, class: {"block w-full rounded-xl border-pink-300 shadow-lg focus:border-pink-500 focus:ring-emerald-500"=> ingredient.errors[:category].none?, "border-red-400 focus:outline-red-600"=> ingredient.errors[:category].any?} %>
+    <%= form.label :category, class: "text-green-900 font-medium" %>
+    <%= form.text_field :category, class: {"block w-full rounded-xl border-green-900/20 shadow-sm focus:border-green-900 focus:ring-green-900/30"=> ingredient.errors[:category].none?, "border-red-400 focus:outline-red-600"=> ingredient.errors[:category].any?} %>
   </div>
 
   <div class="my-5">
-    <%= form.label :description %>
-    <%= form.textarea :description, rows: 4, class: {"block w-full rounded-xl border-pink-300 shadow-lg focus:border-pink-500 focus:ring-emerald-500"=> ingredient.errors[:description].none?, "border-red-400 focus:outline-red-600"=> ingredient.errors[:description].any?} %>
+    <%= form.label :description, class: "text-green-900 font-medium" %>
+    <%= form.textarea :description, rows: 4, class: {"block w-full rounded-xl border-green-900/20 shadow-sm focus:border-green-900 focus:ring-green-900/30"=> ingredient.errors[:description].none?, "border-red-400 focus:outline-red-600"=> ingredient.errors[:description].any?} %>
   </div>
 
   <div class="my-5">
-    <%= form.label :notes %>
-    <%= form.textarea :notes, rows: 4, class: {"block w-full rounded-xl border-pink-300 shadow-lg focus:border-pink-500 focus:ring-emerald-500"=> ingredient.errors[:notes].none?, "border-red-400 focus:outline-red-600"=> ingredient.errors[:notes].any?} %>
+    <%= form.label :notes, class: "text-green-900 font-medium" %>
+    <%= form.textarea :notes, rows: 4, class: {"block w-full rounded-xl border-green-900/20 shadow-sm focus:border-green-900 focus:ring-green-900/30"=> ingredient.errors[:notes].none?, "border-red-400 focus:outline-red-600"=> ingredient.errors[:notes].any?} %>
   </div>
 
 <div class="mb-4">
-  <%= form.label :tag_ids, "Benefits & Properties", class: "block font-bold mb-2 text-pink-600" %>
+  <%= form.label :tag_ids, "🌿 Benefits & Properties", class: "block font-bold mb-2 text-green-900" %>
   <div class="grid grid-cols-2 gap-2">
 
       <%= hidden_field_tag "ingredient[tag_ids][]", nil %>
       
     <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |cb| %>
       <div class="flex items-center">
-        <%= cb.check_box class: "w-4 h-4 text-pink-500 border-gray-300 rounded focus:ring-pink-500" %>
+        <%= cb.check_box class: "w-4 h-4 text-green-900 border-gray-300 rounded focus:ring-green-900" %>
         <%= cb.label class: "ml-2 text-sm text-gray-700" %>
       </div>
     <% end %>
@@ -67,6 +66,6 @@
   
 </div>
   <div class="inline">
-    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-pink-600 hover:bg-pink-500 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "w-full sm:w-auto rounded-xl px-5 py-2.5 bg-green-900 hover:bg-green-800 text-white inline-block font-semibold cursor-pointer shadow-md transition" %>
   </div>
 <% end %>

@@ -15,22 +15,22 @@
     </div>
   <% end %>
 
-  <div class="bg-white shadow-lg p-6 rounded-3-xl border-pink-200">
-  <%= form.label :photo, "Recipe Photo", class: "block font-swmibold text-pink-800 mb-3" %>
+  <div class="bg-green-50 shadow-lg p-6 rounded-3xl border border-green-200">
+  <%= form.label :photo, "Recipe Photo 🌿", class: "block font-semibold text-green-900 mb-3" %>
   <div class="flex items-center justify-center w-full">
-    <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-pink-200 border-dashed rounded-2xl cursor-pointer bg-pink-100 hover:bg-pink-100">
+    <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-green-600 border-dashed rounded-2xl cursor-pointer bg-green-100 hover:bg-green-200">
       <div class="flex flex-col items-center justify-center pt-5 pb-6">
-        <svg class="w-8 h-8 mb-3 text-pink-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+        <svg class="w-8 h-8 mb-3 text-green-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
         </svg>
-        <p class="mb-2 text-sm text-pink-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-        <p class="text-xs text-pink-500">PNG, JPG or GIF</p>
+        <p class="mb-2 text-sm text-green-800"><span class="font-semibold">Click to upload 🌿</span> or drag and drop</p>
+        <p class="text-xs text-green-700">PNG, JPG or GIF</p>
       </div>
       <%= form.file_field :photo, accept: "image/*", class: "hidden" %>
     </label>
   </div>
   <% if recipe.photo.attached? %>
-    <p class="mt-2 text-sm text-emerald-600">✓ Current photo: <%= recipe.photo.filename %></p>
+    <p class="mt-2 text-sm text-green-700">✓ Current photo: <%= recipe.photo.filename %></p>
   <% end %>
 </div>
 
@@ -38,9 +38,9 @@
     <%= form.label :title %>
     <%= form.text_field :title,
                     class: [
-                      "block shadow-sm rounded-xl border px-4 py-2 mt-2 w-full",
+                      "block shadow-sm rounded-xl border px-4 py-2 mt-2 w-full bg-green-50",
                       {
-                        "border-pink-200 focus:outline-pink-600":
+                        "border-green-600 focus:outline-green-800":
                           recipe.errors[:title].none?,
                         "border-red-400 focus:outline-red-600":
                           recipe.errors[:title].any?,
@@ -52,9 +52,9 @@
     <%= form.label :product_type, "Product Type (e.g. Hair Oil, Body Butter)" %>
     <%= form.text_field :product_type,
                     class: [
-                      "block shadow-sm rounded-xl border px-4 py-2 mt-2 w-full",
+                      "block shadow-sm rounded-xl border px-4 py-2 mt-2 w-full bg-green-50",
                       {
-                        "border-pink-200 focus:outline-pink-600":
+                        "border-green-600 focus:outline-green-800":
                           recipe.errors[:product_type].none?,
                         "border-red-400 focus:outline-red-600":
                           recipe.errors[:product_type].any?,
@@ -67,9 +67,9 @@
     <%= form.textarea :method,
                   rows: 5,
                   class: [
-                    "block shadow-sm rounded-xl border px-4 py-2 mt-2 w-full",
+                    "block shadow-sm rounded-xl border px-4 py-2 mt-2 w-full bg-green-50",
                     {
-                      "border-pink-400 focus:outline-pink-600":
+                      "border-green-600 focus:outline-green-800":
                         recipe.errors[:method].none?,
                       "border-red-400 focus:outline-red-600":
                         recipe.errors[:method].any?,
@@ -78,41 +78,41 @@
   </div>
 
   <div class="my-5">
-    <h3 class="font-bold mb-2 text-pink-800 text-lg">Ingredients</h3>
-    <p class="text-sm text-gray-500 mb-4">Select the ingredients and specify the amount needed for this recipe.</p>
+    <h3 class="font-bold mb-2 text-green-900 text-lg">Ingredients 🌿</h3>
+    <p class="text-sm text-green-700 mb-4">Select the ingredients and specify the amount needed for this recipe.</p>
 
     <div class="space-y-4">
       <%= form.fields_for :recipe_ingredients do |ri_form| %>
         <div
           class="
             flex flex-col md:flex-row md:items-end space-y-2 md:space-y-0 md:space-x-4
-            bg-pink-100 p-4 rounded border border-pink-200
+            bg-green-100 p-4 rounded border border-green-300
           "
         >
           <div class="flex-1">
-            <%= ri_form.label :ingredient_id, "Ingredient", class: "block text-sm font-medium text-pink-600" %>
+            <%= ri_form.label :ingredient_id, "Ingredient", class: "block text-sm font-medium text-green-800" %>
             <%= ri_form.collection_select :ingredient_id,
                                       Ingredient.all,
                                       :id,
                                       :name,
                                       { prompt: "Select Ingredient" },
-                                      { class: "block shadow-sm rounded-xl border border-pink-200 px-3 py-2 mt-2 w-full focus:outline-pink-600 bg-white" } %>
+                                      { class: "block shadow-sm rounded-xl border border-green-600 px-3 py-2 mt-2 w-full focus:outline-green-800 bg-white" } %>
           </div>
 
           <div class="w-full md:w-48">
-            <%= ri_form.label :quantity, "Amount", class: "block text-sm font-medium text-pink-600" %>
+            <%= ri_form.label :quantity, "Amount", class: "block text-sm font-medium text-green-800" %>
             <%= ri_form.text_field :quantity,
                                placeholder: "e.g. 50g or 2 tbsp",
-                               class: "block shadow-sm rounded-xl border border-pink-200 px-3 py-2 mt-2 w-full focus:outline-pink-600" %>
+                               class: "block shadow-sm rounded-xl border border-green-600 px-3 py-2 mt-2 w-full focus:outline-green-800 bg-white" %>
           </div>
 
           <% if ri_form.object.persisted? %>
             <div class="flex items-center pb-2">
               <%= ri_form.check_box :_destroy,
-                                class: "h-4 w-4 text-rose-600 border-pink-300 rounded" %>
+                                class: "h-4 w-4 text-red-600 border-green-300 rounded" %>
               <%= ri_form.label :_destroy,
                             "Remove",
-                            class: "ml-2 text-rose-600 text-sm font-medium" %>
+                            class: "ml-2 text-red-600 text-sm font-medium" %>
             </div>
           <% end %>
         </div>
@@ -122,6 +122,6 @@
 
   <div class="inline">
     <%= form.submit class:
-                  "w-full sm:w-auto rounded-xl px-6 py-3 bg-pink-600 hover:bg-pink-300 text-white inline-block font-medium cursor-pointer" %>
+                  "w-full sm:w-auto rounded-xl px-6 py-3 bg-green-800 hover:bg-green-900 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

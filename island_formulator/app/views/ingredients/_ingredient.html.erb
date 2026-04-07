@@ -1,26 +1,26 @@
 <div id="<%= dom_id ingredient %>" class="w-full sm:w-auto my-5 space-y-5">
   <div>
-    <strong class="block font-medium mb-1">Name:</strong>
+    <strong class="block font-medium mb-1 text-green-900"> Name:</strong>
     <%= ingredient.name %>
   </div>
   <div>
-    <strong class="block font-medium mb-1">Category:</strong>
+    <strong class="block font-medium mb-1 text-green-900">Category:</strong>
     <%= ingredient.category %>
   </div>
   <div>
-    <strong class="block font-medium mb-1">Description:</strong>
+    <strong class="block font-medium mb-1 text-green-900">Description:</strong>
     <%= ingredient.description %>
     </div>
   <div>
-    <strong class="block font-medium mb-1">Notes:</strong>
+    <strong class="block font-medium mb-1 text-green-900">Notes:</strong>
     <%= ingredient.notes %>
   </div>
   <p class="mt-4">
-  <strong>Tags:</strong>
+  <strong class="text-green-900"> Tags:</strong>
   <% if ingredient.tags.any? %>
     <div class="flex flex-wrap gap-2 mt-1">
       <% ingredient.tags.each do |tag| %>
-        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-blue-400">
+        <span class="inline-block bg-green-950/10 text-green-900 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-green-900/20">
           <%= tag.name %>
         </span>
       <% end %>

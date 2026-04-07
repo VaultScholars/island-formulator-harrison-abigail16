@@ -11,57 +11,57 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :ingredient_id, "Which Ingredient?" %>
+    <%= form.label :ingredient_id, "Which Ingredient? " %>
     <%= form.collection_select :ingredient_id, Ingredient.all, :id, :name, 
         { prompt: "Select an ingredient" }, 
-        { class: "block shadow-sm rounded-xl border border-pink-200 outline-none px-3 py-2 mt-2 w-full" } %>
+        { class: "block shadow-sm rounded-xl border border-green-700 outline-none px-3 py-2 mt-2 w-full focus:ring-2 focus:ring-green-800 bg-green-50" } %>
   </div>
 
   <div class="my-5">
     <%= form.label :brand %>
-    <%= form.text_field :brand, class: "block shadow-sm rounded-xl border border-pink-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :brand, class: "block shadow-sm rounded-xl border border-green-700 outline-none px-3 py-2 mt-2 w-full focus:ring-2 focus:ring-green-800 bg-green-50" %>
   </div>
 
   <div class="my-5">
     <%= form.label :size, "Size (e.g. 500ml, 16oz)" %>
-    <%= form.text_field :size, class: "block shadow-sm rounded-xl border border-pink-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :size, class: "block shadow-sm rounded-xl border border-green-700 outline-none px-3 py-2 mt-2 w-full focus:ring-2 focus:ring-green-800 bg-green-50" %>
   </div>
 
   <div class="my-5">
     <%= form.label :location, "Where is it stored?" %>
-    <%= form.text_field :location, class: "block shadow-sm rounded-xl border border-pink-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :location, class: "block shadow-sm rounded-xl border border-green-700 outline-none px-3 py-2 mt-2 w-full focus:ring-2 focus:ring-green-800 bg-green-50" %>
   </div>
 
   <div class="my-5">
     <%= form.label :purchase_date %>
-    <%= form.date_field :purchase_date, class: "block shadow-sm rounded-xl border border-pink-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.date_field :purchase_date, class: "block shadow-sm rounded-xl border border-green-700 outline-none px-3 py-2 mt-2 w-full focus:ring-2 focus:ring-green-800 bg-green-50" %>
   </div>
 
   <div class="my-5">
     <%= form.label :notes %>
-    <%= form.text_area :notes, rows: 4, class: "block shadow-sm rounded-xl border border-pink-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_area :notes, rows: 4, class: "block shadow-sm rounded-xl border border-green-700 outline-none px-3 py-2 mt-2 w-full focus:ring-2 focus:ring-green-800 bg-green-50" %>
   </div>
 
-  <div class="bg-white shadow p-6 rounded-2xl border-pink-100 mb-5">
-    <%= form.label :photo, "Photo (receipt or bottle)", class: "block font-bold text-pink-700 mb-2" %>
+  <div class="bg-green-50 shadow p-6 rounded-2xl border-green-200 mb-5">
+    <%= form.label :photo, "Photo (receipt or bottle) ", class: "block font-bold text-green-800 mb-2" %>
     <div class="flex items-center justify-center w-full">
-      <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-pink-300 border-dashed rounded-2xl cursor-pointer bg-pink-100 hover:bg-pink-100 transition">
+      <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-green-600 border-dashed rounded-2xl cursor-pointer bg-green-100 hover:bg-green-200 transition">
         <div class="flex flex-col items-center justify-center pt-5 pb-6">
-          <svg class="w-8 h-8 mb-4 text-pink-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+          <svg class="w-8 h-8 mb-4 text-green-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
           </svg>
-          <p class="mb-2 text-sm text-pink-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-          <p class="text-xs text-pink-500">PNG, JPG or GIF</p>
+          <p class="mb-2 text-sm text-green-800"><span class="font-semibold">Click to upload </span> or drag and drop</p>
+          <p class="text-xs text-green-700">PNG, JPG or GIF</p>
         </div>
         <%= form.file_field :photo, accept: "image/*", class: "hidden" %>
       </label>
     </div>
     <% if inventory_item.photo.attached? %>
-      <p class="mt-2 text-sm text-emerald-600">✓ Current photo: <%= inventory_item.photo.filename %></p>
+      <p class="mt-2 text-sm text-green-700">✓ Current photo: <%= inventory_item.photo.filename %></p>
     <% end %>
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-xl py-3 px-5 bg-pink-600 hover:bg-pink-700 text-white inline-block font-semibold shadow-md hover:shadow-lg cursor-pointer" %>
+    <%= form.submit class: "rounded-xl py-3 px-5 bg-green-800 hover:bg-green-900 text-white inline-block font-semibold shadow-md hover:shadow-lg cursor-pointer" %>
   </div>
 <% end %>
